@@ -1,12 +1,17 @@
 package com.driver;
 
-public class F1 extends Car {
+public class F1 extends Car
+{
 
-    public F1(String name, boolean isManual) {
+    public F1(String name, boolean isManual) // completed
+    {
         //Use arbitrary values for parameters which are not mentioned
+        super(name , 0 , 0 , 0 , isManual , null , 0);
     }
 
-    public void accelerate(int rate){
+    public void accelerate(int rate)
+    { //accelerate(rate): add rate to the current speed and change the gear accordingly
+
         int newSpeed = 0; //set the value of new speed by using currentSpeed and rate
         /**
          * speed 0: gear 1
@@ -17,14 +22,19 @@ public class F1 extends Car {
          * speed 201-250: gear 5
          * speed more than 250: gear 6
          */
-
-        if(newSpeed == 0) {
+        newSpeed += rate;
+        if(newSpeed == 0) // completed
+        {
             //Stop the car, set gear as 1
+            super.changeGear(1);
         }
         //for all other cases, change the gear accordingly
 
-        if(newSpeed > 0) {
+        if(newSpeed > 0)
+        {
             changeSpeed(newSpeed, getCurrentDirection());
         }
     }
+
+
 }
