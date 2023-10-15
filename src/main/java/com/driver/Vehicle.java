@@ -34,8 +34,16 @@ public class Vehicle {
         System.out.println("stop method called - The vehicle is stopped");
     }
 
-    public int getDirection() //  new getters added
+    public int getCurrentDirection() //  new getters added
     {
         return currentDirection;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public int getCurrentSpeed() {
+        return currentSpeed;
     }
 }
